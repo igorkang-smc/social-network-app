@@ -26,11 +26,14 @@ SECRET_KEY = 'django-insecure-*u6x+bw9m#j2ei-mui$x0jr$v0p&e7+jt-9&)&s(fq-l3aif*i
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
 
 # Application definition
 
 INSTALLED_APPS = [
+    'account.apps.AccountConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -50,3 +50,5 @@ python manage.py createsuperuser
 # 5) Run
 python manage.py runserver
 ```
+
+![img.png](img.png)
