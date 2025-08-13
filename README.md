@@ -12,6 +12,14 @@ Steps:
 * [x] Configuring the project for media file uploads
 
 
+* [x] Using the messages framework
+* [x] Building a custom authentication backend
+* [x] Preventing users from using an existing email
+* [x] Adding social authentication with Python Social Auth
+* [x] Running the development server through HTTPS using Django Extensions
+* [x] Adding authentication using Google
+* [x] Creating a profile for users that register with social authentication
+
 ## Requirements
 - Python 3.11+ (3.12 recommended)
 - pip or uv / pipenv / poetry (pick your favorite)
@@ -52,3 +60,5 @@ python manage.py runserver
 ```
 
 ![img.png](img.png)
+
+![img_1.png](img_1.png)
