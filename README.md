@@ -20,6 +20,15 @@ Steps:
 * [x] Adding authentication using Google
 * [x] Creating a profile for users that register with social authentication
 
+
+* [x] Creating many-to-many relationships
+* [x] Customizing behavior for forms
+* [x] Using JavaScript with Django
+* [x] Building a JavaScript bookmarklet
+* [x] Generating image thumbnails using easy-thumbnails
+* [x] Implementing asynchronous HTTP requests with JavaScript and Django
+* [x] Building infinite scroll pagination
+
 ## Requirements
 - Python 3.11+ (3.12 recommended)
 - pip or uv / pipenv / poetry (pick your favorite)
@@ -62,3 +71,5 @@ python manage.py runserver
 ![img.png](img.png)
 
 ![img_1.png](img_1.png)
+
+![img_2.png](img_2.png)
