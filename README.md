@@ -73,3 +73,16 @@ python manage.py runserver
 ![img_1.png](img_1.png)
 
 ![img_2.png](img_2.png)
+
+## Bookmarlet Usage 
+
+add bookmarklet script (button's javascript url) into bookmarks of browser
+![img_3.png](img_3.png)
+
+Open a new URL with your browser, for example, https://commons.wikimedia.org/.
+
+Click on the Bookmark it bookmarklet to display the image selection overlay. You will see the image selection overlay like this:
+![img_4.png](img_4.png)
+
+If you click on an image, you will be redirected to the image creation page, passing the title of the website and the URL of the selected image as GET parameters. The page will look as follows:
+![img_5.png](img_5.png)
