@@ -66,6 +66,9 @@ python manage.py createsuperuser
 
 # 5) Run
 python manage.py runserver
+
+# Run with dummy cert over tls/ssl to test image creation with bookmark snippet
+python manage.py runserver_plus --cert-file cert.crt
 ```
 
 ![img.png](img.png)
