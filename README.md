@@ -29,6 +29,17 @@ Steps:
 * [x] Implementing asynchronous HTTP requests with JavaScript and Django
 * [x] Building infinite scroll pagination
 
+
+* [x] Building a follow system
+* [x] Creating many-to-many relationships with an intermediate model
+* [x] Creating an activity stream application
+* [x] Adding generic relations to models
+* [x] Optimizing QuerySets for related objects
+* [x] Using signals for denormalizing counts
+* [x] Using Django Debug Toolbar to obtain relevant debug information
+* [x] Counting image views with Redis
+* [x] Creating a ranking of the most viewed images with Redis
+
 ## Requirements
 - Python 3.11+ (3.12 recommended)
 - pip or uv / pipenv / poetry (pick your favorite)
@@ -76,6 +87,8 @@ python manage.py runserver_plus --cert-file cert.crt
 ![img_1.png](img_1.png)
 
 ![img_2.png](img_2.png)
+
+![img_6.png](img_6.png)
 
 ## Bookmarlet Usage 
 

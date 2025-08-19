@@ -17,7 +17,7 @@
           <a href="{% url "images:list" %}">Images</a>
         </li>
         <li {% if section == "people" %}class="selected"{% endif %}>
-          <a href="#">People</a>
+          <a href="{% url "user_list" %}">People</a>
         </li>
       </ul>
     {% endif %}
@@ -28,33 +28,33 @@
           <button type="submit">Logout</button>
           {% csrf_token %}
         </form>
-      {% else %}
+        {% else %}
         <a href="{% url "login" %}">Log-in</a>
-      {% endif %}
+        {% endif %}
     </span>
-  </div>
-  {% if messages %}
-    <ul class="messages">
-      {% for message in messages %}
-        <li class="{{ message.tags }}">
-          {{ message|safe }}
-          <a href="#" class="close">x</a>
-        </li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-  <div id="content">
+</div>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li class="{{ message.tags }}">
+        {{ message|safe }}
+        <a href="#" class="close">x</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+<div id="content">
     {% block content %}
     {% endblock %}
-  </div>
-  <script src="//cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
-  <script>
+</div>
+<script src="//cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+<script>
     const csrftoken = Cookies.get('csrftoken');
     document.addEventListener('DOMContentLoaded', (event) => {
-      // DOM loaded
-      {% block domready %}
-      {% endblock %}
+        // DOM loaded
+        {% block domready %}
+        {% endblock %}
     })
-  </script>
+</script>
 </body>
 </html>
