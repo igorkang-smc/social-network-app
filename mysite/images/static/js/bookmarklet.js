@@ -1,5 +1,5 @@
-const siteUrl = '//127.0.0.1:8000/';
-const styleUrl = siteUrl + 'static/css/bookmarklet.css';
+const siteUrl = "https://mysite.com:8000/";
+const styleUrl = 'https://social-app-uploads-bucket.s3.ap-northeast-2.amazonaws.com/css/bookmarklet.css'
 const minWidth = 250;
 const minHeight = 250;
 

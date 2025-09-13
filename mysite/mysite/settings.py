@@ -29,6 +29,16 @@ SECRET_KEY = 'django-insecure-*u6x+bw9m#j2ei-mui$x0jr$v0p&e7+jt-9&)&s(fq-l3aif*i
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+if DEBUG:
+    STATIC_URL = "/static/"
+    STATICFILES_DIRS = [BASE_DIR / "static"]
+    STATIC_ROOT = BASE_DIR / "staticfiles"
+    import mimetypes
+    mimetypes.add_type('application/javascript', '.js', True)
+    mimetypes.add_type('text/css', '.css', True)
+
+
+INTERNAL_IPS = ["127.0.0.1", "localhost"]
 
 ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 LOGIN_REDIRECT_URL = 'dashboard'
@@ -38,6 +48,7 @@ LOGOUT_URL = 'logout'
 # Application definition
 
 INSTALLED_APPS = [
+
     'account.apps.AccountConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -50,11 +61,15 @@ INSTALLED_APPS = [
     'django.contrib.postgres',
     'social_django',
     'images.apps.ImagesConfig',
+    'actions.apps.ActionsConfig',
     'django_extensions',
     'easy_thumbnails',
+    'storages',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -62,6 +77,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -147,8 +163,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-MEDIA_URL = 'media/'
-MEDIA_ROOT = BASE_DIR / 'media'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
@@ -159,6 +173,22 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_CUSTOM_DOMAIN = config('AWS_S3_CUSTOM_DOMAIN')
+AWS_S3_FILE_OVERWRITE = config('AWS_S3_FILE_OVERWRITE')
+MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/media/'
+
+STORAGES = {
+    "default": {
+        "BACKEND": "storages.backends.s3boto3.S3StaticStorage",
+    },
+
+    "staticfiles": {
+        "BACKEND": "storages.backends.s3boto3.S3StaticStorage",
+    },
+}
 
 # Email server configuration
 EMAIL_HOST = 'smtp.gmail.com'
@@ -168,3 +198,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 SITE_ID = 1
+REDIS_HOST = config('REDIS_HOST')
+REDIS_PORT = config('REDIS_PORT')
+REDIS_USERNAME = config('REDIS_USERNAME')
+REDIS_PASSWORD = config('REDIS_PASSWORD')
