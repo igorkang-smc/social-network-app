@@ -29,14 +29,6 @@ SECRET_KEY = 'django-insecure-*u6x+bw9m#j2ei-mui$x0jr$v0p&e7+jt-9&)&s(fq-l3aif*i
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-if DEBUG:
-    STATIC_URL = "/static/"
-    STATICFILES_DIRS = [BASE_DIR / "static"]
-    STATIC_ROOT = BASE_DIR / "staticfiles"
-    import mimetypes
-    mimetypes.add_type('application/javascript', '.js', True)
-    mimetypes.add_type('text/css', '.css', True)
-
 
 INTERNAL_IPS = ["127.0.0.1", "localhost"]
 
