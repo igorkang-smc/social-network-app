@@ -32,7 +32,7 @@ DEBUG = True
 
 INTERNAL_IPS = ["127.0.0.1", "localhost"]
 
-ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1', '.vercel.app']
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
