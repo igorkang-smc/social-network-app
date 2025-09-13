@@ -1,4 +1,4 @@
-const siteUrl = "https://mysite.com:8000/";
+const siteUrl = "https://social-network-app-liard.vercel.app/";
 const styleUrl = 'https://social-app-uploads-bucket.s3.ap-northeast-2.amazonaws.com/css/bookmarklet.css'
 const minWidth = 250;
 const minHeight = 250;
